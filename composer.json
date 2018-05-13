@@ -1,12 +1,17 @@
 {
-    "name": "drupal/attribute",
+    "name": "jienckebd/attribute",
+    "description": "Feeds crawler module.",
     "type": "drupal-module",
-    "description": "Provides a framework to support automatic referencing of entities based on conditions and fields.",
-    "homepage": "http://drupal.org/project/attribute",
     "license": "GPL-2.0+",
     "require": {
-        "drupal/inline_entity_form": "~0.7",
-        "drupal/rules": "~1.0"
+        "fabpot/goutte": "^3.2"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ]
 }
