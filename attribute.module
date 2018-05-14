@@ -43,7 +43,7 @@ function attribute_preprocess_html(&$variables) {
               $classes = $attribute_entity->get('field_class')->getValue();
               if (!empty($classes)) {
                 foreach ($classes as $class) {
-                  $variables['attributes']['class'][] = $class['value'];
+                  $variables['attributes']['class'][] = !empty($class['value']) ? $class['value'] : NULL;
                 }
               }
             }
