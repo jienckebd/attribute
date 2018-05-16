@@ -76,9 +76,8 @@ class AttributeManager {
    * @param AccountInterface $current_user
    * @param SessionManagerInterface $session_manager
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, PluginManager $matcher_plugin_manager, CacheBackendInterface $cache, ConfigFactoryInterface $config_factory, ModuleHandlerInterface $module_handler, AccountInterface $current_user, SessionManagerInterface $session_manager) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, CacheBackendInterface $cache, ConfigFactoryInterface $config_factory, ModuleHandlerInterface $module_handler, AccountInterface $current_user, SessionManagerInterface $session_manager) {
     $this->entityTypeManager = $entity_type_manager;
-    $this->matcherPluginManager = $matcher_plugin_manager;
     $this->cache = $cache;
     $this->configFactory = $config_factory;
     $this->moduleHandler = $module_handler;
