@@ -119,12 +119,8 @@ class AttributeManager {
         if ($attribute_entity_type != 'attribute') {
           continue;
         }
-        if ($field->getTargetEntityTypeId() == 'taxonomy_term') {
-          array_unshift([$entity_type][$bundle][$field_name], $field);
-        }
-        else {
-          $data[$entity_type][$bundle][$field_name] = $field;
-        }
+
+        $data[$entity_type][$bundle][$field_name] = $field;
       }
 
       $this->cache->set($cid, $data);
