@@ -32,6 +32,11 @@ function attribute_preprocess_html(&$variables) {
       $attribute_fields = $attribute_manager->getAttributeFields();
       $entity_fields = $route_param->getFieldDefinitions();
 
+      // @todo check for non-bundled entity types.
+      if (empty($attribute_fields[$entity_type_id][$bundle])) {
+        continue;
+      }
+
       $attribute_fields_on_this_entity = array_intersect(array_keys($entity_fields), array_keys($attribute_fields[$entity_type_id][$bundle]));
       if (!empty($attribute_fields_on_this_entity)) {
         foreach ($attribute_fields_on_this_entity as $attribute_field) {
